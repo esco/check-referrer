@@ -13,8 +13,8 @@ npm install check-referrer
 *   rules _String_
 
     list of routing rules
-    _-_ means exclude from redirect
-    _+_ means only exclude from redirect
+    * _-_ means exclude from redirect
+    * _+_ means only exclude from redirect
 
 *   redirect _String_
 
