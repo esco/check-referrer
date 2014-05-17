@@ -6,8 +6,19 @@
   "directories": {
     "test": "test"
   },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "chai": "^1.9.1",
+    "supertest": "^0.12.1",
+    "express": "^4.2.0"
+  },
   "scripts": {
-    "test": "mocha test/**/*-test.js"
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/heftybyte/check-referrer.git"
   },
   "keywords": [
     "referrer",
@@ -17,11 +28,8 @@
   ],
   "author": "esco <esco@hbyte.com>",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "^1.18.2",
-    "chai": "^1.9.1",
-    "supertest": "^0.12.1",
-    "express": "^4.2.0"
-  }
+  "bugs": {
+    "url": "https://github.com/heftybyte/check-referrer/issues"
+  },
+  "homepage": "https://github.com/heftybyte/check-referrer"
 }
