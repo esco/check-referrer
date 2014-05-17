@@ -1,4 +1,4 @@
 check-referrer
 ==============
 
-rout requests based on referrer based on referrer
+route requests based on referrer based on referrer

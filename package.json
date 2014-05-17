@@ -1,0 +1,27 @@
+{
+  "name": "check-referrer",
+  "version": "0.0.1",
+  "description": "route requests based on referrer based on referrer",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/**/*-test.js"
+  },
+  "keywords": [
+    "referrer",
+    "block referrer",
+    "redirect",
+    "redirect referrer"
+  ],
+  "author": "esco <esco@hbyte.com>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "chai": "^1.9.1",
+    "supertest": "^0.12.1",
+    "express": "^4.2.0"
+  }
+}
