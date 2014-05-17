@@ -1,7 +1,7 @@
 {
   "name": "check-referrer",
   "version": "0.0.1",
-  "description": "route requests based on referrer based on referrer",
+  "description": "middleware for routing requests based on referrer",
   "main": "index.js",
   "directories": {
     "test": "test"
