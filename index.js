@@ -20,7 +20,6 @@ module.exports = function(_rules, _redirect) {
   }
 
   function redirect(res) {
-    res.blacklisted = true;
     return res.redirect(_redirect);
   }
 
