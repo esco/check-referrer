@@ -20,6 +20,10 @@ module.exports = function(_rules, _redirect) {
   }
 
   function redirect(res) {
+    if (!_redirect) {
+      return res.send(200);
+    }
+
     return res.redirect(_redirect);
   }
 

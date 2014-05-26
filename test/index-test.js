@@ -58,6 +58,24 @@ describe('check-referrer', function(){
       });
   });
 
+  it("should not redirect or be whitelisted", function(done){
+    this.app.use(checkReferrer('+example.com'));
+    setRoutes(this.app);
+    this.app.use(function(req, res){
+      expect(req.fromAllowedReferrer).to.equal(false);
+      res.send(200);
+    });
+    request(this.app)
+      .get('/secret')
+      .set('Referrer', 'www.example.com')
+      .end(function(err, res){
+        var exprected = "OK";
+        expect(res.text).to.equal(exprected);
+        done();
+      });
+  });
+
+
   it("should allow certain referrers", function(done){
     this.app.use(checkReferrer('-example.com', '/rosy'));
     setRoutes(this.app);

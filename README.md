@@ -29,12 +29,19 @@ By default, all requests are redirected.
 
 To exclude urls from redirection use '-'
 
+
 ```javascript
-// Only allow requests from example.com
+// Whitelist requests from example.com
+var checkReferrer = require('check-referrer');
+app.use(checkReferrer('-example.com'));
+// req.fromAllowedReferrer will be set to true in all middleware that runs after a request from example.com
+```
+
+
+```javascript
+// Only allow and whitelist requests from example.com
 var checkReferrer = require('check-referrer');
 app.use(checkReferrer('-example.com', '/redirect-here'));
-
-// req.fromAllowedReferrer will be set to true in all middleware that runs after
 ```
 
 To redirect only specific urls while allowing all others, use '+'
