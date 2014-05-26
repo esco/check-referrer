@@ -61,15 +61,15 @@ describe('check-referrer', function(){
   it("should not redirect or be whitelisted", function(done){
     this.app.use(checkReferrer('+example.com'));
     setRoutes(this.app);
-    this.app.use(function(req, res){
+    this.app.use(function(req, res, next){
       expect(req.fromAllowedReferrer).to.equal(false);
-      res.send(200);
+      next();
     });
     request(this.app)
       .get('/secret')
       .set('Referrer', 'www.example.com')
       .end(function(err, res){
-        var exprected = "OK";
+        var exprected = "recipe";
         expect(res.text).to.equal(exprected);
         done();
       });

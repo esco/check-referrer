@@ -21,7 +21,7 @@ module.exports = function(_rules, _redirect) {
 
   function redirect(res) {
     if (!_redirect) {
-      return res.send(200);
+      return false;
     }
 
     return res.redirect(_redirect);
@@ -39,7 +39,7 @@ module.exports = function(_rules, _redirect) {
     referrer = req.header('Referrer');
 
     if (!referrer) {
-      return redirect(res);
+      return redirect(res) || next();
     }
 
     whitelisted = whitelist.some(function(pattern){
@@ -56,7 +56,7 @@ module.exports = function(_rules, _redirect) {
     });
 
     if (blacklisted) {
-      return redirect(res);
+      return redirect(res) || next();
     }
 
     next();
