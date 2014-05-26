@@ -43,6 +43,7 @@ module.exports = function(_rules, _redirect) {
     });
 
     if (whitelisted) {
+      req.fromAllowedReferrer = true;
       return next();
     }
 
