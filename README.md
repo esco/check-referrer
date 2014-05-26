@@ -20,7 +20,7 @@ npm install check-referrer
 
     route for redirect
 
-
+req.fromAllowedReferrer will be set to true for whitelisted referrers
 
 examples
 ========
@@ -33,6 +33,8 @@ To exclude urls from redirection use '-'
 // Only allow requests from example.com
 var checkReferrer = require('check-referrer');
 app.use(checkReferrer('-example.com', '/redirect-here'));
+
+// req.fromAllowedReferrer will be set to true in all middleware that runs after
 ```
 
 To redirect only specific urls while allowing all others, use '+'
